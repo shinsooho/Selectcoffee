@@ -30,10 +30,10 @@ main p {  1.2em;
 
 .navi-btn {
   float: right;
-  padding-top: 30px;
+  margin-top: 27px;
   color: black;
-  margin: 0;
-    width: 20px;
+  font-size: 0.8em;
+  padding: 4px;
 }
 
 .navi-btn:hover { color: #efa666; }
@@ -48,7 +48,20 @@ main p {  1.2em;
   overflow: hidden;
   transition: all 0.1s ease-in-out;
 }
-
+#search{
+    background-image: url(../img/search.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8em;
+}
+@media (min-width:1000px) and (max-width:1140px){
+    #search,#delivery{
+        display: none;
+    }
+}
 .search_box.active {
   height: auto;
   padding: 15px 0;
@@ -87,7 +100,6 @@ main p {  1.2em;
 .spinner-master input[type=checkbox] { display: none; }
 
 .menu {
-  width: 1000px;
   height: auto;
   background: white;
   transition: all 0.3s ease;
@@ -112,7 +124,9 @@ main p {  1.2em;
 }
 
 .menu ul li { padding: 0px; }
-
+.main-li > a:hover{
+    color: #dd3070;
+}
 .menu > ul > li { 
     display: inline-block;
     float: left;
@@ -124,17 +138,10 @@ main p {  1.2em;
     display: block;
     text-decoration: none;
     color: black;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
 
-.menu ul li a:hover {
-  color: #dd3070;
-}
-
-.menu ul li.hover > .dropdown-ul a {
-  color: #dd3070;
-}
 
 .menu ul ul {
     display: none;
@@ -142,7 +149,7 @@ main p {  1.2em;
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.95);
     z-index: 9999;
     transition: all 0.3s ease;
 }
@@ -169,9 +176,6 @@ main p {  1.2em;
     padding-bottom:30px;
     font-size: 0.8em;
 }
-.dropdown-ul li a:hover {
-    color: #dd3070;
-}
 
 #hero {
     width: 100%;
@@ -187,9 +191,10 @@ main p {  1.2em;
 
 @media all and (min-width:1000px){
     .menu ul ul{
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
+    
     .dropdown-submenu{
         width: 700px;
         margin: 0 auto;
@@ -203,6 +208,22 @@ main p {  1.2em;
         display: inline-block;
         float: left;
         width: 33%;
+    }
+    .dropdown-banner > h4{
+        border-bottom: 1px solid black;
+        padding-bottom: 1px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .dropdown-banner > p{
+        font-size: 0.8em;
+        margin-top:12px;
+        color: #888;
+    }
+    .dropdown-banner > p:last-child{
+        margin-top: 7px;
+        text-decoration: underline;
+        color: black;
     }
     .dropdown-banner img{
         width: 200px;
@@ -228,6 +249,7 @@ main p {  1.2em;
     margin: 15px;
     text-align: center;
     width: 20px;
+    font-size: 0;
 }
 
 .spinner-master * {
@@ -352,10 +374,11 @@ a.menu-link.active:after { content: "\2715"; }
 .menu li a {
   color: #fff;
   display: block;
-  padding: 0.8em;
   position: relative;
 }
-
+.has-submenu > .active{
+    color: #dd3070;
+}
 .menu li.has-submenu > a:after {
   content: '+';
   position: absolute;
@@ -366,7 +389,10 @@ a.menu-link.active:after { content: "\2715"; }
   padding: 0.55em 0.5em;
 }
 
-.menu li.has-submenu > a.active:after { content: "-"; }
+.menu li.has-submenu > a.active:after { 
+    content: "-"; 
+}
+     
 .dropdown-ul li { 
     position: relative; 
     text-align: left;
@@ -379,7 +405,6 @@ a.menu-link.active:after { content: "\2715"; }
 
 .menu ul li a:hover {
   background: white;
-  color: black;
 }
 
 .menu ul li.hover > a {
